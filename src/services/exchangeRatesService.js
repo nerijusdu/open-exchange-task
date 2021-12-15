@@ -11,12 +11,8 @@ class ExchangeRatesService {
   }
 
   async getExchangeRates() {
-    try {
-      const response = await this.api.get('/latest.json');
-      return response.data;
-    } catch (error) {
-      return error;
-    }
+    const response = await this.api.get('/latest.json');
+    return response.data;
   }
 }
 
