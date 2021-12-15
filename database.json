@@ -1,0 +1,31 @@
+{
+  "defaultEnv": "dev",
+  "dev": {
+    "driver": "mysql",
+    "database": "open-exchange",
+    "host": "localhost",
+    "port": 3306,
+    "user": {
+      "ENV": "DB_USER"
+    },
+    "password": {
+      "ENV": "DB_PASSWORD"
+    },
+    "multipleStatements": true
+  },
+  "production": {
+    "driver": "mysql",
+    "database": "open-exchange",
+    "port": 3306,
+    "host": {
+      "ENV": "DB_HOST"
+    },
+    "user": {
+      "ENV": "DB_USER"
+    },
+    "password": {
+      "ENV": "DB_PASSWORD"
+    },
+    "multipleStatements": true
+  }
+}
