@@ -7,12 +7,9 @@ const accessLogMiddleware = require('./middleware/accessLogMiddleware');
 const routes = require('./routes');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.use(accessLogMiddleware)
-
+app.use('/rates', accessLogMiddleware);
 app.use(routes);
 
 if (process.env.NODE_ENV !== 'test') {
