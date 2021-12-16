@@ -1,12 +1,12 @@
-const app = require('../../app');
 const supertest = require('supertest');
+const app = require('../../app');
 const exchangeRatesService = require('../../services/exchangeRatesService');
 const accessLogService = require('../../services/accessLogService');
 
 const server = supertest(app);
 
 describe('GET /rates', () => {
-  it('should return 200 OK', async () => {
+  it('should return rates', async () => {
     const rates = { base: 'USD', rates: { EUR: 1 } };
     jest.spyOn(exchangeRatesService, 'getExchangeRates').mockResolvedValue(rates);
 
