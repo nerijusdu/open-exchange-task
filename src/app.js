@@ -15,4 +15,8 @@ app.use(accessLogMiddleware)
 
 app.use(routes);
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => console.log(`Listening on port ${port}`));
+}
+
+module.exports = app;

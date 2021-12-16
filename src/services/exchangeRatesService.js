@@ -2,7 +2,7 @@ const axios = require('axios');
 
 class ExchangeRatesService {
   constructor() {
-    this.api = axios.create({
+    this._api = axios.create({
       baseURL: 'https://openexchangerates.org/api/',
       headers: {
         Authorization: `Token ${process.env.APP_ID}`,
@@ -11,7 +11,7 @@ class ExchangeRatesService {
   }
 
   async getExchangeRates() {
-    const response = await this.api.get('/latest.json');
+    const response = await this._api.get('/latest.json');
     return response.data;
   }
 }
